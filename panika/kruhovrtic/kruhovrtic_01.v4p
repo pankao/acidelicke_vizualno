@@ -1,0 +1,233 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
+   <PATCH nodename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\vj\kruhovrtic\kruhovrtic_01.v4p" scrollx="870" scrolly="1260" systemname="kruhovrtic_01" filename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\vj\kruhovrtic\kruhovrtic_01.v4p">
+   <BOUNDS type="Window" left="10560" top="5340" width="9000" height="6000">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="33.3.0">
+   </PACK>
+   <NODE systemname="Cylinder (EX9.Geometry)" nodename="Cylinder (EX9.Geometry)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="2400" top="900" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Shade (EX9.RenderState)" nodename="Shade (EX9.RenderState)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="2235" top="1515" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Shading" slicecount="1" values="Phong">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="4" nodename=":EFFECTS:\FlatDirectional.fx" systemname="FlatDirectional (EX9.Effect)" filename="%VVVV%\lib\nodes\effects\FlatDirectional.fx">
+   <BOUNDS height="0" left="2235" top="2205" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="6720" left="6780" top="10605" type="Window" width="9000">
+   </BOUNDS>
+   <BOUNDS height="3600" left="2235" top="2205" type="Box" width="4800">
+   </BOUNDS>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.14180,0.14180,0.14180,1.00000|">
+   </PIN>
+   <PIN pinname="Diffuse Color" slicecount="1" values="|0.84745,0.84745,0.84745,1.00000|">
+   </PIN>
+   <PIN pinname="Specular Color" slicecount="1" values="|0.34609,0.34609,0.34609,1.00000|">
+   </PIN>
+   <PIN pinname="Light Direction XYZ" visible="1" slicecount="3" values="0,-5,2">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Power" slicecount="1" values="25">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Mesh" dstnodeid="4" dstpinname="Mesh">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="5">
+   <BOUNDS type="Node" left="2250" top="4920" width="1650" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2250" top="4920" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="1920" top="9180" width="9525" height="6150">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="2250" top="4320" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Template Count" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Layer 5" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="PerfMeter (Debug)" filename="%VVVV%\lib\nodes\modules\Debug\PerfMeter (Debug).v4p" nodename="PerfMeter (Debug)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="2880" top="2655" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="9">
+   <BOUNDS type="Node" left="5790" top="735" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5790" top="735" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1.98">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Render State Out" dstnodeid="4" dstpinname="Render State">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Layer" dstnodeid="5" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="4020" top="4905" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Actual Backbuffer Width" dstnodeid="11" dstpinname="Aspect Width" linkstyle="Bezier">
+   <LINKPOINT x="3195" y="5088">
+   </LINKPOINT>
+   <LINKPOINT x="4440" y="4978">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Actual Backbuffer Height" dstnodeid="11" dstpinname="Aspect Height" linkstyle="Bezier">
+   <LINKPOINT x="3375" y="5088">
+   </LINKPOINT>
+   <LINKPOINT x="4650" y="4978">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Transform Out" dstnodeid="5" dstpinname="Aspect Ratio" linkstyle="Bezier">
+   <LINKPOINT x="4215" y="4978">
+   </LINKPOINT>
+   <LINKPOINT x="3555" y="5088">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="5745" top="1380" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="TranslateY" visible="1">
+   </PIN>
+   <PIN pinname="ScaleX" visible="1">
+   </PIN>
+   <PIN pinname="ScaleY" visible="1">
+   </PIN>
+   <PIN pinname="CenterY" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="SVGTexture (EX9.Texture)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="SVGTexture (EX9.Texture)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="5745" top="3840" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Document" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="5745" top="3840">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (SVG)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Quad (SVG)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="5745" top="2730" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="5745" top="2730">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Transform Out" dstnodeid="16" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="Renderer (SVG)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Renderer (SVG)" componentmode="InAWindow" id="17">
+   <BOUNDS type="Node" left="5745" top="3270" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5745" top="3270" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="19080" top="2760" width="6120" height="4920">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Document" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Layer" dstnodeid="17" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Document" dstnodeid="15" dstpinname="Document">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="13" dstpinname="TranslateY">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="18">
+   <BOUNDS type="Node" left="7035" top="750" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7035" top="750" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="13" dstpinname="ScaleX">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="13" dstpinname="ScaleY">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="19" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="5415" top="300" width="1095" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5415" top="300" width="1500" height="345">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|vyska textury|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="10">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Texture Out" dstnodeid="4" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="Chess (EX9.Effect)" filename="%VVVV%\lib\nodes\effects\Chess.fx" nodename="Chess (EX9.Effect)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="2235" top="3855" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Layer" dstnodeid="6" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Layer" dstnodeid="6" dstpinname="Layer 5">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Mesh" dstnodeid="21" dstpinname="Mesh">
+   </LINK>
+   </PATCH>

@@ -1,0 +1,193 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
+   <PATCH nodename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\vj\kruhomriz\kruhomriz_02.v4p" systemname="kruhomriz_02" filename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\vj\kruhomriz\kruhomriz_02.v4p" scrollx="315" scrolly="600">
+   <BOUNDS type="Window" left="11805" top="1485" width="12915" height="12375">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="33.3.0">
+   </PACK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="1">
+   <BOUNDS type="Node" left="3600" top="3180" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3600" top="3180" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2175" top="2430" width="10770" height="10380">
+   </BOUNDS>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1">
+   </PIN>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="7275" top="4620" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Actual Backbuffer Width" dstnodeid="2" dstpinname="Aspect Width">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Actual Backbuffer Height" dstnodeid="2" dstpinname="Aspect Height">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Transform Out" dstnodeid="1" dstpinname="Aspect Ratio">
+   </LINK>
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="3780" top="4065" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Segment (DX9)" nodename="Segment (DX9)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="3180" top="5115" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture Coord Mapping" slicecount="1" values="FrontProjected_XY">
+   </PIN>
+   <PIN pinname="Resolution" slicecount="1" values="17">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Texture Out" dstnodeid="16" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="17">
+   <BOUNDS type="Node" left="3165" top="6045" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3165" top="6045" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="945" top="1365" width="14460" height="12735">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="2370" top="4125" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="1.85">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Transform Out" dstnodeid="16" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="6210" top="5985" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Actual Backbuffer Width" dstnodeid="19" dstpinname="Aspect Width">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Actual Backbuffer Height" dstnodeid="19" dstpinname="Aspect Height">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Transform Out" dstnodeid="17" dstpinname="Aspect Ratio">
+   </LINK>
+   <NODE systemname="GridSegment (DX9)" nodename="GridSegment (DX9)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="1140" top="5025" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Texture Coord Mapping" slicecount="1" values="FrontProjected_XY">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" values="30">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="30">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Texture Out" dstnodeid="20" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Transform Out" dstnodeid="20" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Transform Out" dstnodeid="20" dstpinname="Texture Transform">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="EX9 Out" dstnodeid="15" dstpinname="Source">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Layer" dstnodeid="17" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="69">
+   <BOUNDS type="Node" left="4245" top="1380" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4245" top="1380" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="30">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="70">
+   <BOUNDS type="Node" left="5475" top="2265" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="Initial FOV" slicecount="1" values="0.03">
+   </PIN>
+   <PIN pinname="Initial Pitch" slicecount="1" values="-0.09">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Initial Interest" slicecount="3" values="0,0,0">
+   </PIN>
+   <PIN pinname="Inital Distance" slicecount="1" values="14.8">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="70" srcpinname="View Projection" dstnodeid="1" dstpinname="View">
+   </LINK>
+   <NODE systemname="Bars" filename="%VVVV%\work\vj\kruhomriz\subpatches\Bars.v4p" nodename="Bars" componentmode="InAWindow" id="68">
+   <BOUNDS type="Node" left="3885" top="2490" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8625" top="255" width="9435" height="6990">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="H Count" visible="1">
+   </PIN>
+   <PIN pinname="V Count" visible="1">
+   </PIN>
+   <PIN pinname="H Width" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Scale" slicecount="1" values="3.7">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="68" srcpinname="Layer" dstnodeid="1" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Y Output Value" dstnodeid="68" dstpinname="V Count">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Y Output Value" dstnodeid="68" dstpinname="H Count">
+   </LINK>
+   </PATCH>

@@ -1,0 +1,495 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
+   <PATCH nodename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\vj\kruhomriz\kruhomriz_03.v4p" systemname="kruhomriz_03" filename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\vj\kruhomriz\kruhomriz_03.v4p" scrollx="3810" scrolly="0">
+   <BOUNDS type="Window" left="12555" top="450" width="15465" height="10650">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="33.3.0">
+   </PACK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="1">
+   <BOUNDS type="Node" left="885" top="2835" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="885" top="2835" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="6480" top="2325" width="6840" height="3975">
+   </BOUNDS>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Backbuffer Width" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="2340" top="3270" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Format" slicecount="1" values="A8R8G8B8">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="17">
+   <BOUNDS type="Node" left="4230" top="2805" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4230" top="2805" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="945" top="1365" width="7230" height="5715">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Backbuffer Width" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="4395" top="1575" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" visible="1" values="1.44">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="EX9 Out" dstnodeid="15" dstpinname="Source">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="69">
+   <BOUNDS type="Node" left="1590" top="1035" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1590" top="1035" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="14">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Bars" filename="%VVVV%\work\vj\kruhomriz\subpatches\Bars.v4p" nodename="Bars" componentmode="InAWindow" id="68">
+   <BOUNDS type="Node" left="870" top="2145" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2955" top="2250" width="10620" height="6990">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="H Count" visible="1">
+   </PIN>
+   <PIN pinname="V Count" visible="1">
+   </PIN>
+   <PIN pinname="H Width" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Scale" slicecount="1" visible="1" values="3.7">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="68" srcpinname="Layer" dstnodeid="1" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Y Output Value" dstnodeid="68" dstpinname="V Count" linkstyle="Bezier">
+   <LINKPOINT x="1630" y="1778">
+   </LINKPOINT>
+   <LINKPOINT x="2030" y="1778">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Y Output Value" dstnodeid="68" dstpinname="H Count" linkstyle="Bezier">
+   <LINKPOINT x="1570" y="1778">
+   </LINKPOINT>
+   <LINKPOINT x="1250" y="1778">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="71">
+   <BOUNDS type="Node" left="5685" top="3255" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Format" slicecount="1" values="A8R8G8B8">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="EX9 Out" dstnodeid="71" dstpinname="Source">
+   </LINK>
+   <NODE systemname="Segment (DX9)" nodename="Segment (DX9)" componentmode="Hidden" id="73">
+   <BOUNDS type="Node" left="4215" top="2160" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Resolution" slicecount="1" values="60">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Transform Out" dstnodeid="73" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="74">
+   <BOUNDS type="Node" left="5310" top="1035" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5310" top="1035" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1.01">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="74" srcpinname="Y Output Value" dstnodeid="18" dstpinname="XYZ">
+   </LINK>
+   <NODE systemname="SetAlpha (EX9.Texture Join)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\SplitJoin\SetAlpha\SetAlpha (EX9.Texture Join).v4p" nodename="SetAlpha (EX9.Texture Join)" componentmode="Hidden" id="75">
+   <BOUNDS type="Node" left="4065" top="4230" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Alpha" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="71" srcpinname="Texture Out" dstnodeid="75" dstpinname="Alpha" linkstyle="Bezier">
+   <LINKPOINT x="5685" y="3863">
+   </LINKPOINT>
+   <LINKPOINT x="4290" y="3863">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Texture Out" dstnodeid="75" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="2400" y="3870">
+   </LINKPOINT>
+   <LINKPOINT x="4065" y="3870">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="76">
+   <BOUNDS type="Node" left="3720" top="6975" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3720" top="6975" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="4770" top="8655" width="9630" height="4905">
+   </BOUNDS>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="78">
+   <BOUNDS type="Node" left="3705" top="5250" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="79">
+   <BOUNDS type="Node" left="3870" top="4755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" visible="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="79" srcpinname="Transform Out" dstnodeid="78" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="75" srcpinname="Output" dstnodeid="78" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="80">
+   <BOUNDS type="Node" left="3720" top="6315" width="8850" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer Template Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="PerfMeter (Debug)" filename="%VVVV%\lib\nodes\modules\Debug\PerfMeter (Debug).v4p" nodename="PerfMeter (Debug)" componentmode="Hidden" id="81">
+   <BOUNDS type="Node" left="4380" top="5865" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="81" srcpinname="Layer" dstnodeid="80" dstpinname="Layer 2">
+   <LINKPOINT x="4440" y="6090">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="78" srcpinname="Layer" dstnodeid="80" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="80" srcpinname="Layer" dstnodeid="76" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="82">
+   <BOUNDS type="Node" left="555" top="1035" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="555" top="1035" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.71">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="82" srcpinname="Y Output Value" dstnodeid="68" dstpinname="Scale">
+   </LINK>
+   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="83">
+   <BOUNDS type="Node" left="5460" top="6960" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Alignment" slicecount="1" values="FitIn">
+   </PIN>
+   <PIN pinname="Uniform Scale" slicecount="1" values="1.38">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="76" srcpinname="Actual Backbuffer Width" dstnodeid="83" dstpinname="Aspect Width">
+   </LINK>
+   <LINK srcnodeid="76" srcpinname="Actual Backbuffer Height" dstnodeid="83" dstpinname="Aspect Height">
+   </LINK>
+   <LINK srcnodeid="83" srcpinname="Transform Out" dstnodeid="76" dstpinname="Aspect Ratio">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="84">
+   <BOUNDS type="Node" left="3150" top="1035" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3150" top="1035" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="400">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="84" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Backbuffer Height" linkstyle="Bezier">
+   <LINKPOINT x="3150" y="2040">
+   </LINKPOINT>
+   <LINKPOINT x="1590" y="2040">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="84" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Backbuffer Width" linkstyle="Bezier">
+   <LINKPOINT x="3150" y="2040">
+   </LINKPOINT>
+   <LINKPOINT x="1425" y="2040">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="84" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Backbuffer Height" linkstyle="Bezier">
+   <LINKPOINT x="3210" y="2025">
+   </LINKPOINT>
+   <LINKPOINT x="4860" y="2025">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="84" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Backbuffer Width" linkstyle="Bezier">
+   <LINKPOINT x="3210" y="2033">
+   </LINKPOINT>
+   <LINKPOINT x="4710" y="2033">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="2" systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden">
+   <PIN pinname="Alignment" slicecount="1" values="FitIn">
+   </PIN>
+   <PIN pinname="Uniform Scale" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Node" left="2535" top="2835" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE id="19" systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden">
+   <PIN pinname="Alignment" slicecount="1" values="FitIn">
+   </PIN>
+   <BOUNDS type="Node" left="5940" top="2820" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Actual Backbuffer Width" dstnodeid="19" dstpinname="Aspect Width" linkstyle="Bezier">
+   <LINKPOINT x="5275" y="2930">
+   </LINKPOINT>
+   <LINKPOINT x="6260" y="2935">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Actual Backbuffer Height" dstnodeid="19" dstpinname="Aspect Height" linkstyle="Bezier">
+   <LINKPOINT x="5455" y="2930">
+   </LINKPOINT>
+   <LINKPOINT x="6470" y="2935">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Transform Out" dstnodeid="17" dstpinname="Aspect Ratio" linkstyle="Bezier">
+   <LINKPOINT x="6035" y="2935">
+   </LINKPOINT>
+   <LINKPOINT x="5635" y="2930">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Actual Backbuffer Width" dstnodeid="2" dstpinname="Aspect Width" linkstyle="Bezier">
+   <LINKPOINT x="1785" y="2948">
+   </LINKPOINT>
+   <LINKPOINT x="3000" y="2948">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Actual Backbuffer Height" dstnodeid="2" dstpinname="Aspect Height" linkstyle="Bezier">
+   <LINKPOINT x="1965" y="2948">
+   </LINKPOINT>
+   <LINKPOINT x="3210" y="2948">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Transform Out" dstnodeid="1" dstpinname="Aspect Ratio" linkstyle="Bezier">
+   <LINKPOINT x="2775" y="2948">
+   </LINKPOINT>
+   <LINKPOINT x="2145" y="2948">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="73" srcpinname="Layer" dstnodeid="17" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="GlobalRenderState (EX9)" nodename="GlobalRenderState (EX9)" componentmode="Hidden" id="86">
+   <BOUNDS type="Node" left="2010" top="5760" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Blend (EX9.RenderState)" nodename="Blend (EX9.RenderState)" componentmode="Hidden" id="88">
+   <BOUNDS type="Node" left="2430" top="4770" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   <PIN pinname="Draw Mode" slicecount="1" values="Add">
+   </PIN>
+   </NODE>
+   <NODE systemname="Fill (EX9.RenderState)" nodename="Fill (EX9.RenderState)" componentmode="Hidden" id="89">
+   <BOUNDS type="Node" left="1980" top="4800" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="89" srcpinname="Render State Out" dstnodeid="86" dstpinname="Render State">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="93">
+   <BOUNDS type="Node" left="2655" top="2085" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="Initial FOV" slicecount="1" values="0.01">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Initial Pitch" slicecount="1" values="0.16">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="93" srcpinname="View Projection" dstnodeid="1" dstpinname="View">
+   </LINK>
+   <NODE systemname="Segment (DX9)" nodename="Segment (DX9)" componentmode="Hidden" id="94">
+   <BOUNDS type="Node" left="8115" top="4965" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Inner Radius" slicecount="1" values="0.95" visible="1">
+   </PIN>
+   <PIN pinname="Resolution" slicecount="1" values="30" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="94" srcpinname="Layer" dstnodeid="80" dstpinname="Layer 3">
+   </LINK>
+   <NODE systemname="Segment (DX9)" nodename="Segment (DX9)" componentmode="Hidden" id="95">
+   <BOUNDS type="Node" left="10290" top="4950" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Inner Radius" slicecount="1" visible="1" values="0.95">
+   </PIN>
+   <PIN pinname="Resolution" slicecount="1" visible="1" values="30">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="95" srcpinname="Layer" dstnodeid="80" dstpinname="Layer 4">
+   </LINK>
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="96">
+   <BOUNDS type="Node" left="10455" top="4065" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="1.06">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="96" srcpinname="Transform Out" dstnodeid="95" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="97">
+   <BOUNDS type="Node" left="9630" top="4065" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9630" top="4065" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.99">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="97" srcpinname="Y Output Value" dstnodeid="94" dstpinname="Inner Radius" linkstyle="Bezier">
+   <LINKPOINT x="9630" y="4635">
+   </LINKPOINT>
+   <LINKPOINT x="9420" y="4635">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="Y Output Value" dstnodeid="95" dstpinname="Inner Radius" linkstyle="Bezier">
+   <LINKPOINT x="9690" y="4613">
+   </LINKPOINT>
+   <LINKPOINT x="11565" y="4613">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="98">
+   <BOUNDS type="Node" left="11775" top="4065" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11775" top="4065" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="60">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="98" srcpinname="Y Output Value" dstnodeid="95" dstpinname="Resolution" linkstyle="Bezier">
+   <LINKPOINT x="11805" y="4628">
+   </LINKPOINT>
+   <LINKPOINT x="11895" y="4628">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="98" srcpinname="Y Output Value" dstnodeid="94" dstpinname="Resolution" linkstyle="Bezier">
+   <LINKPOINT x="11775" y="4620">
+   </LINKPOINT>
+   <LINKPOINT x="9765" y="4620">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>
