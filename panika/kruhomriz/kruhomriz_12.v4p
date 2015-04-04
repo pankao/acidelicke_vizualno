@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\acidelicke_vizualno\panika\kruhomriz\kruhomriz_11.v4p" systemname="kruhomriz_11" filename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\acidelicke_vizualno\panika\kruhomriz\kruhomriz_11.v4p" scrollx="225" scrolly="0">
+   <PATCH nodename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\acidelicke_vizualno\panika\kruhomriz\kruhomriz_12.v4p" systemname="kruhomriz_12" filename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\acidelicke_vizualno\panika\kruhomriz\kruhomriz_12.v4p" scrollx="225" scrolly="0">
    <BOUNDS type="Window" left="9195" top="690" width="13530" height="12360">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">

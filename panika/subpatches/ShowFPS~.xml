@@ -1,0 +1,127 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
+   <PATCH nodename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\acidelicke_vizualno\panika\subpatches\ShowFPS.v4p" scrollx="0" scrolly="0" systemname="ShowFPS" filename="C:\Users\panika\Dropbox\vvvv_45beta33.3_x86\work\acidelicke_vizualno\panika\subpatches\ShowFPS.v4p">
+   <BOUNDS type="Window" left="11055" top="6225" width="8610" height="7020">
+   </BOUNDS>
+   <NODE systemname="Timing (Debug)" nodename="Timing (Debug)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="2055" top="690" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="frames per second" visible="1">
+   </PIN>
+   <PIN pinname="Up Time" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="1">
+   <BOUNDS type="Node" left="15" top="15" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15" top="15" width="1020" height="825">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="59">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="36">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|frames per second|">
+   </PIN>
+   </NODE>
+   <PACK Name="addonpack" Version="33.7.0">
+   </PACK>
+   <NODE systemname="Mod (Value)" nodename="Mod (Value)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="3960" top="1410" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Up Time" dstnodeid="2" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="3960" top="1950" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="3" dstpinname="Input">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="3960" top="2445" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3960" top="2445" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Up Edge" dstnodeid="4" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="3600" top="3315" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="frames per second" dstnodeid="5" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="3600" top="3945" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="6" dstpinname="Go To Position">
+   </LINK>
+   <NODE systemname="Round (Value)" filename="%VVVV%\addonpack\lib\nodes\plugins\Round.dll" nodename="Round (Value)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="3585" top="4800" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Rounding" slicecount="1" values="Truncate">
+   </PIN>
+   <PIN pinname="Digits" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Position Out" dstnodeid="7" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="1" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="8">
+   <BOUNDS type="Node" left="4350" top="630" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4350" top="630" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="6" dstpinname="FilterTime" linkstyle="Bezier">
+   <LINKPOINT x="4410" y="2408">
+   </LINKPOINT>
+   <LINKPOINT x="3780" y="2408">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>
